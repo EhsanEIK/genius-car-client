@@ -27,8 +27,8 @@ const Signup = () => {
                 <div className="text-center">
                     <img src={image} alt="" />
                 </div>
-                <form onSubmit={handleSignUp} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <form onSubmit={handleSignUp} className="card-body">
                         <h1 className="text-5xl font-bold text-center mb-10 mt-2">Sign Up</h1>
                         <div className="form-control">
                             <label className="label">
@@ -55,10 +55,10 @@ const Signup = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <button className="btn bg-orange-600 border-0">Sign Up</button>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );
