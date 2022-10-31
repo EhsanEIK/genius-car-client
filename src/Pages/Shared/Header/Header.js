@@ -29,7 +29,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-outline btn-error font-semibold">Appointment</a>
+                <a href='/' className="btn btn-outline btn-error font-semibold">Appointment</a>
             </div>
         </nav >
     );
