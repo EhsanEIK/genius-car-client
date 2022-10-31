@@ -31,7 +31,7 @@ const Signin = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-orange-600 border-0">Sign in</button>
+                            <input className="btn bg-orange-600 border-0" value="Sign in" />
                         </div>
                     </div>
                 </form>
