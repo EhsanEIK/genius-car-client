@@ -17,7 +17,7 @@ const Checkout = () => {
         const message = form.message.value;
 
         const order = {
-            sevice: _id,
+            service: _id,
             serviceName: title,
             price,
             customer: name,
