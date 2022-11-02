@@ -8,10 +8,16 @@ const Header = () => {
 
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-        <li className='font-semibold'><Link to='/signin'>Sign In</Link></li>
-        <li className='font-semibold'><Link to='/signup'>Sign Up</Link></li>
         {
-            user ? <li><Link>Welcome, {user?.email}</Link></li> : ''
+            user ? <>
+                <li className='font-semibold'><Link to='/orders'>Orders</Link></li>
+                <li><Link>Welcome, {user?.email}</Link></li>
+            </>
+                :
+                <>
+                    <li className='font-semibold'><Link to='/signin'>Sign In</Link></li>
+                    <li className='font-semibold'><Link to='/signup'>Sign Up</Link></li>
+                </>
         }
     </>
     return (
