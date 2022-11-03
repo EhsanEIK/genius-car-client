@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../../assets/images/login/login.svg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
@@ -9,6 +9,10 @@ const Signin = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
+
+    const navigate = useNavigate();
+    const location = useLocation;
+    const from = location.state?.from?.pathname || '/'
 
     // sign in with email & password
     const handleSignIn = event => {
@@ -20,7 +24,8 @@ const Signin = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                alert('user login successfully');
+                toast.success(`Welcome ${user?.email}`);
+                navigate(from, { replace: true });
                 form.reset();
             })
             .catch(error => console.error(error));
