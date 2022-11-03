@@ -11,8 +11,8 @@ const Signin = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const navigate = useNavigate();
-    const location = useLocation;
-    const from = location.state?.from?.pathname || '/'
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     // sign in with email & password
     const handleSignIn = event => {

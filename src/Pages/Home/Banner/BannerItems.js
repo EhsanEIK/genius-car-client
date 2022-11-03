@@ -18,7 +18,7 @@ const BannerItems = ({ slider }) => {
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-2/4 w-2/4">
                 <p className='text-white text-lg'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nam aperiam beatae laboriosam harum assumenda aliquid corrupti distinctio quo temporibus.</p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nam aperiam beatae laboriosam harum assumenda aliquid corrupti distinctio quo temporibus.
                 </p>
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4">
