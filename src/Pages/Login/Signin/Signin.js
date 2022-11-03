@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import image from '../../../assets/images/login/login.svg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
+import toast from 'react-hot-toast';
 
 const Signin = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Signin = () => {
         googleSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
-                alert('user login successfully with Google');
+                toast.success('user login successfully with Google');
             })
             .catch(error => console.error(error));
     }
