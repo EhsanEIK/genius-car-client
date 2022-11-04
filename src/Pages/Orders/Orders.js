@@ -15,12 +15,14 @@ const Orders = () => {
         })
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
-                    logOut();
+                    return logOut()
+                        .then(r => toast.success("Unauthorized access, please login again."))
+                        .catch(error => console.error(error));
                 }
                 return res.json();
             })
             .then(data => setOrders(data));
-    }, [user?.email])
+    }, [user?.email, logOut])
 
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure to delete this?");

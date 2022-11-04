@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
 
     // sign out
     const logOut = () => {
+        localStorage.removeItem('genius-token');
         setLoading(true);
         return signOut(auth);
     }
