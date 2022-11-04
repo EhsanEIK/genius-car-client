@@ -37,13 +37,11 @@ const Signin = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
                         localStorage.setItem('genius-token', data.token);
+                        toast.success(`Welcome ${user?.email}`);
+                        navigate(from, { replace: true });
+                        form.reset();
                     })
-
-                // toast.success(`Welcome ${user?.email}`);
-                // navigate(from, { replace: true });
-                // form.reset();
             })
             .catch(error => console.error(error));
     }
