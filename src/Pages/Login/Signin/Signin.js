@@ -4,6 +4,7 @@ import image from '../../../assets/images/login/login.svg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { GoogleAuthProvider } from "firebase/auth";
 import toast from 'react-hot-toast';
+import { setAuthToken } from '../../../api/auth';
 
 const Signin = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -51,7 +52,7 @@ const Signin = () => {
         googleSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
-                toast.success('user login successfully with Google');
+                setAuthToken(user);
             })
             .catch(error => console.error(error));
     }

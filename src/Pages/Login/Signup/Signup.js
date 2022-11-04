@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { setAuthToken } from '../../../api/auth';
 import image from '../../../assets/images/login/login.svg';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
@@ -15,7 +16,7 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                alert('user created successfully');
+                setAuthToken(user);
                 form.reset();
             })
             .catch(error => console.error(error));
