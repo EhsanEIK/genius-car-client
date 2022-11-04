@@ -10,7 +10,7 @@ const Orders = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${user?.email}`, {
             headers: {
-                authorization: `Bearar ${localStorage.getItem('genius-token')}`,
+                authorization: `Bearer ${localStorage.getItem('genius-token')}`
             }
         })
             .then(res => {
@@ -28,7 +28,10 @@ const Orders = () => {
         const proceed = window.confirm("Are you sure to delete this?");
         if (proceed) {
             fetch(`http://localhost:5000/orders/${id}`, {
-                method: "DELETE"
+                method: "DELETE",
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('genius-token')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -46,6 +49,7 @@ const Orders = () => {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('genius-token')}`
             },
             body: JSON.stringify({ status: 'Approved' })
         })
